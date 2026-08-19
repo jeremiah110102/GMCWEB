@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Users | Church Dedication System</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="users">
+    <div id="appShell">
+      <main class="content">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Administration</p>
+            <h1>User Roles</h1>
+            <p>
+              Assign access after creating accounts in Firebase Authentication.
+            </p>
+          </div>
+          <button class="btn primary admin-only" data-open-modal="userModal">
+            + Add profile
+          </button>
+        </div>
+        <section class="panel">
+          <div id="usersTable" class="table-wrap loading-block">
+            Loading users…
+          </div>
+        </section>
+      </main>
+    </div>
+    <dialog id="userModal" class="modal">
+      <form id="userForm" method="dialog">
+        <div class="modal-head">
+          <h2>User profile</h2>
+          <button class="icon-btn" value="cancel">×</button>
+        </div>
+        <div class="form-grid">
+          <label class="span-2"
+            >Firebase Authentication UID<input id="uid" required /></label
+          ><label class="span-2"
+            >Full name<input id="displayName" required /></label
+          ><label class="span-2"
+            >Email<input id="userEmail" type="email" required /></label
+          ><label class="span-2"
+            >Role<select id="role">
+              <option value="administrator">Administrator</option>
+              <option value="encoder">Encoder</option>
+              <option value="viewer">Viewer</option>
+            </select></label
+          >
+        </div>
+        <div class="modal-actions">
+          <button class="btn ghost" value="cancel">Cancel</button
+          ><button class="btn primary" type="submit" value="default">
+            Save profile
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <script type="module" src="js/users.js"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login | Church Dedication System</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="login-page">
+    <main class="login-shell">
+      <section class="login-brand">
+        <div class="brand-mark">✦</div>
+        <p class="eyebrow">Grace Mission Church</p>
+        <h1>Dedication Certificate Management</h1>
+        <p>
+          Securely prepare, manage, print, and preserve child dedication
+          certificates.
+        </p>
+      </section>
+      <section class="login-card">
+        <img src="assets/img/logo.png" alt="Church logo" class="login-logo" />
+        <h2>Welcome back</h2>
+        <p class="muted">Sign in to continue.</p>
+        <form id="loginForm" novalidate>
+          <label
+            >Email<input
+              id="email"
+              type="email"
+              autocomplete="username"
+              required
+              placeholder="admin@church.org" /></label
+          ><label
+            >Password<span class="password-wrap"
+              ><input
+                id="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                minlength="6"
+                placeholder="Enter password"
+              /><button
+                id="togglePassword"
+                class="icon-btn"
+                type="button"
+                aria-label="Show password"
+              >
+                Show
+              </button></span
+            ></label
+          ><button class="btn primary wide" type="submit">Sign in</button>
+        </form>
+        <p id="loginMessage" class="form-message" role="alert"></p>
+      </section>
+    </main>
+    <script type="module" src="js/auth.js"></script>
+  </body>
+</html>

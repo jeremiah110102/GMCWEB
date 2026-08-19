@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pastors | Church Dedication System</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="pastors">
+    <div id="appShell">
+      <main class="content">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Directory</p>
+            <h1>Pastor Management</h1>
+            <p>Manage pastors and their assigned churches.</p>
+          </div>
+          <button class="btn primary admin-only" data-open-modal="pastorModal">
+            + Add pastor
+          </button>
+        </div>
+        <section class="panel">
+          <div class="toolbar">
+            <label class="search"
+              ><span>Search</span
+              ><input id="searchInput" placeholder="Search pastors…" /></label
+            ><label
+              >Church<select id="churchFilter">
+                <option value="">All churches</option>
+              </select></label
+            >
+          </div>
+          <div id="pastorTable" class="table-wrap loading-block">
+            Loading pastors…
+          </div>
+        </section>
+      </main>
+    </div>
+    <dialog id="pastorModal" class="modal">
+      <form id="pastorForm" method="dialog">
+        <div class="modal-head">
+          <h2 id="pastorModalTitle">Add pastor</h2>
+          <button class="icon-btn" value="cancel">×</button>
+        </div>
+        <input type="hidden" id="pastorId" />
+        <div class="form-grid">
+          <label>First name<input id="firstName" required /></label
+          ><label>Middle name<input id="middleName" /></label
+          ><label>Last name<input id="lastName" required /></label
+          ><label>Suffix<input id="suffix" placeholder="Jr., Sr., III" /></label
+          ><label
+            >Position<input
+              id="position"
+              required
+              value="Officiating Minister" /></label
+          ><label>Contact number<input id="contactNumber" type="tel" /></label
+          ><label class="span-2"
+            >Assigned church<select id="assignedChurch" required></select
+          ></label>
+        </div>
+        <div class="modal-actions">
+          <button class="btn ghost" value="cancel">Cancel</button
+          ><button class="btn primary" type="submit" value="default">
+            Save pastor
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <script type="module" src="js/pastors.js"></script>
+  </body>
+</html>

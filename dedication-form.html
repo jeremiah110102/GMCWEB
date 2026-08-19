@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>New Dedication | Church Dedication System</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="dedication-form">
+    <div id="appShell">
+      <main class="content">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Certificate Entry</p>
+            <h1 id="formTitle">New Dedication</h1>
+            <p>Enter the dedication information. Required fields are marked.</p>
+          </div>
+          <span id="certificateNumberBadge" class="badge gold"
+            >Generating number…</span
+          >
+        </div>
+        <form id="dedicationForm" class="panel long-form">
+          <input id="recordId" type="hidden" />
+          <fieldset>
+            <legend>Child information</legend>
+            <div class="form-grid">
+              <label>First name *<input id="firstName" required /></label
+              ><label>Middle name<input id="middleName" /></label
+              ><label>Last name *<input id="lastName" required /></label
+              ><label>Suffix<input id="suffix" /></label
+              ><label
+                >Gender *<select id="gender" required>
+                  <option value="">Select</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select></label
+              ><label
+                >Birth date *<input
+                  id="birthDate"
+                  type="date"
+                  required /></label
+              ><label class="span-2"
+                >Birthplace *<input id="birthplace" required /></label
+              ><label class="span-2"
+                >Complete address *<textarea
+                  id="address"
+                  rows="2"
+                  required
+                ></textarea>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Parents</legend>
+            <div class="form-grid">
+              <label
+                >Father’s complete name *<input
+                  id="fatherName"
+                  required /></label
+              ><label
+                >Mother’s complete name *<input id="motherName" required
+              /></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Dedication details</legend>
+            <div class="form-grid">
+              <label
+                >Dedication date *<input
+                  id="dedicationDate"
+                  type="date"
+                  required /></label
+              ><label
+                >Dedication place *<input
+                  id="dedicationPlace"
+                  required /></label
+              ><label>Church *<select id="churchId" required></select></label
+              ><label
+                >Pastor *<select
+                  id="pastorId"
+                  required
+                  disabled
+                ></select></label
+              ><label class="span-2"
+                >Certificate template *<select
+                  id="templateId"
+                  required
+                  disabled
+                ></select></label
+              ><label
+                >Status<select id="status">
+                  <option>Active</option>
+                  <option>Draft</option>
+                  <option>Cancelled</option>
+                </select></label
+              >
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="fieldset-head">
+              <legend>Godparents / Witnesses</legend>
+              <button class="btn secondary" id="addGodparent" type="button">
+                + Add godparent
+              </button>
+            </div>
+            <div id="godparentsList" class="godparents-list"></div>
+          </fieldset>
+          <div class="form-actions sticky-actions">
+            <a class="btn ghost" href="dedication-records.html">Cancel</a
+            ><button class="btn primary" type="submit">Save dedication</button>
+          </div>
+        </form>
+      </main>
+    </div>
+    <script type="module" src="js/dedications.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Records | Church Dedication System</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="dedication-records">
+    <div id="appShell">
+      <main class="content">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Registry</p>
+            <h1>Dedication Records</h1>
+            <p>Search, correct, preview, print, and reissue certificates.</p>
+          </div>
+          <a class="btn primary can-edit" href="dedication-form.html"
+            >+ New dedication</a
+          >
+        </div>
+        <section class="panel">
+          <div class="toolbar wrap">
+            <label class="search"
+              ><span>Search</span
+              ><input
+                id="recordSearch"
+                placeholder="Name or certificate number…" /></label
+            ><label
+              >Church<select id="recordChurchFilter">
+                <option value="">All churches</option>
+              </select></label
+            ><label
+              >Status<select id="recordStatusFilter">
+                <option value="">All statuses</option>
+                <option>Active</option>
+                <option>Draft</option>
+                <option>Cancelled</option>
+              </select></label
+            ><label
+              >Sort<select id="recordSort">
+                <option value="date-desc">Newest first</option>
+                <option value="date-asc">Oldest first</option>
+                <option value="name-asc">Name A–Z</option>
+                <option value="name-desc">Name Z–A</option>
+              </select></label
+            >
+          </div>
+          <div id="recordsTable" class="table-wrap loading-block">
+            Loading records…
+          </div>
+          <div id="pagination" class="pagination"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="js/dedications.js"></script>
+  </body>
+</html>

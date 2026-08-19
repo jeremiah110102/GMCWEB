@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard | Church Dedication System</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="dashboard">
+    <div id="appShell">
+      <main class="content">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Overview</p>
+            <h1>Dashboard</h1>
+            <p>Church records and dedication activity at a glance.</p>
+          </div>
+          <a class="btn primary" href="dedication-form.html"
+            >+ New dedication</a
+          >
+        </div>
+        <section id="statsGrid" class="stats-grid"></section>
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Recent dedication records</h2>
+              <p>Latest certificates created by your team.</p>
+            </div>
+            <a href="dedication-records.html">View all</a>
+          </div>
+          <div id="recentRecords" class="table-wrap loading-block">
+            Loading records…
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="js/dashboard.js"></script>
+  </body>
+</html>

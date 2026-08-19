@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Churches | Church Dedication System</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="churches">
+    <div id="appShell">
+      <main class="content">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Directory</p>
+            <h1>Church Management</h1>
+            <p>Maintain church names, addresses, and contact information.</p>
+          </div>
+          <button class="btn primary can-manage" data-open-modal="churchModal">
+            + Add church
+          </button>
+        </div>
+        <section class="panel">
+          <div class="toolbar">
+            <label class="search"
+              ><span>Search</span
+              ><input id="searchInput" placeholder="Search churches…"
+            /></label>
+          </div>
+          <div id="churchTable" class="table-wrap loading-block">
+            Loading churches…
+          </div>
+        </section>
+      </main>
+    </div>
+    <dialog id="churchModal" class="modal">
+      <form id="churchForm" method="dialog">
+        <div class="modal-head">
+          <h2 id="churchModalTitle">Add church</h2>
+          <button class="icon-btn" value="cancel" aria-label="Close">×</button>
+        </div>
+        <input type="hidden" id="churchId" />
+        <div class="form-grid">
+          <label class="span-2"
+            >Church name<input
+              id="churchName"
+              required
+              maxlength="150" /></label
+          ><label class="span-2"
+            >Complete address<textarea
+              id="churchAddress"
+              required
+              rows="3"
+            ></textarea></label
+          ><label>Contact number<input id="churchContact" type="tel" /></label
+          ><label>Email<input id="churchEmail" type="email" /></label>
+        </div>
+        <div class="modal-actions">
+          <button class="btn ghost" value="cancel">Cancel</button
+          ><button
+            id="saveChurch"
+            class="btn primary"
+            type="submit"
+            value="default"
+          >
+            Save church
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <script type="module" src="js/churches.js"></script>
+  </body>
+</html>
+

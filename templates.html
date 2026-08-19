@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>
+      Certificate Templates | Church Dedication System
+    </title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/certificate-editor.css" />
+  </head>
+
+  <body data-page="templates">
+    <div id="appShell">
+      <main class="content">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">Certificate Studio</p>
+
+            <h1>Template Management</h1>
+
+            <p>
+              Drag, drop, and style every part of the certificate —
+              changes appear live on the canvas.
+            </p>
+          </div>
+
+          <div class="page-heading-actions">
+            <button
+              class="btn primary admin-only"
+              id="newTemplate"
+              type="button"
+            >
+              + New Template
+            </button>
+
+            <button
+              class="btn primary admin-only"
+              id="saveTemplate"
+              type="button"
+            >
+              Save Template
+            </button>
+
+            <button
+              class="btn danger admin-only"
+              id="deleteTemplate"
+              type="button"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+
+        <div class="editor-shell">
+          <!-- Left: template meta + add blocks + layers -->
+          <aside class="editor-sidebar-left">
+            <div class="meta-panel">
+              <h3>Template</h3>
+
+              <label>
+                Template name
+                <input
+                  id="templateName"
+                  type="text"
+                  maxlength="150"
+                  placeholder="Example: Classic Dedication Certificate"
+                />
+              </label>
+
+              <label>
+                Church
+                <select id="churchId">
+                  <option value="">Select church</option>
+                </select>
+              </label>
+
+              <label>
+                Pastor
+                <select id="pastorId">
+                  <option value="">Select pastor</option>
+                </select>
+              </label>
+
+              <label>
+                Paper size
+                <select id="paperSize">
+                  <option value="a4">A4</option>
+                  <option value="letter">Letter</option>
+                </select>
+              </label>
+
+              <label>
+                Orientation
+                <select id="orientation">
+                  <option value="portrait">Portrait</option>
+                  <option value="landscape">Landscape</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="blocks-panel">
+              <h3>Add to canvas</h3>
+
+              <div class="add-block-buttons">
+                <button
+                  class="btn secondary admin-only"
+                  id="addTextBlock"
+                  type="button"
+                >
+                  + Text
+                </button>
+
+                <button
+                  class="btn secondary admin-only"
+                  id="addWitnessBlock"
+                  type="button"
+                >
+                  + Witnesses
+                </button>
+              </div>
+
+              <h3>Layers</h3>
+              <p class="hint-text">
+                Click a layer to select it on the canvas.
+              </p>
+
+              <div id="layersList" class="layers-list"></div>
+            </div>
+          </aside>
+
+          <!-- Center: canvas -->
+          <div class="editor-canvas-wrap">
+            <div id="certCanvas" class="cert-canvas"></div>
+          </div>
+
+          <!-- Right: properties of the selected block -->
+          <aside
+            class="editor-sidebar-right"
+            id="propertiesPanel"
+          >
+            <p class="empty-hint">
+              Select a block on the certificate to edit its style.
+            </p>
+          </aside>
+        </div>
+
+        <div class="saved-templates-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Saved Templates</h2>
+              <p>Select a template to edit it.</p>
+            </div>
+          </div>
+
+          <div id="templateList" class="template-list"></div>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="js/templates.js"></script>
+  </body>
+</html>

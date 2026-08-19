@@ -1,0 +1,320 @@
+/* ------------------------------------------------------------------ */
+/*  Layout shell                                                       */
+/* ------------------------------------------------------------------ */
+
+.editor-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  gap: 16px;
+  align-items: start;
+}
+
+.editor-sidebar-left,
+.editor-sidebar-right {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f8f9fb;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 82vh;
+  overflow-y: auto;
+}
+
+.editor-sidebar-left h3,
+.editor-sidebar-right h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-family: Georgia, serif;
+  font-size: 1rem;
+}
+
+.editor-sidebar-left label,
+.editor-sidebar-right label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.editor-sidebar-left input,
+.editor-sidebar-left select,
+.editor-sidebar-right input,
+.editor-sidebar-right select,
+.editor-sidebar-right textarea {
+  font: inherit;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.checkbox-label {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 6px !important;
+}
+
+.toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+
+.meta-panel,
+.blocks-panel {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.meta-panel {
+  border-top: none;
+  padding-top: 0;
+}
+
+.add-block-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* Fallback styling in case style.css has no .btn.secondary yet */
+.btn.secondary {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--navy);
+}
+
+.btn.secondary:hover {
+  background: #eef1f8;
+}
+
+.page-heading-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hint-text {
+  font-size: 0.78rem;
+  color: #667;
+  margin: 0 0 8px;
+}
+
+.empty-hint {
+  font-size: 0.85rem;
+  color: #778;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Layers list                                                        */
+/* ------------------------------------------------------------------ */
+
+.layers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.layer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.layer-item:hover {
+  border-color: var(--line);
+}
+
+.layer-item.selected {
+  border-color: var(--navy);
+  background: #eef1f8;
+}
+
+.layer-index {
+  color: #99a;
+  font-size: 0.72rem;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Canvas                                                              */
+/* ------------------------------------------------------------------ */
+
+.editor-canvas-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.cert-canvas {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 210 / 297;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 18px rgba(20, 30, 60, 0.08);
+  overflow: hidden;
+  user-select: none;
+}
+
+.cert-canvas.landscape {
+  aspect-ratio: 297 / 210;
+}
+
+.cert-block {
+  position: absolute;
+  cursor: grab;
+  touch-action: none;
+}
+
+.cert-block--text .cert-block-content {
+  line-height: 1.4;
+  white-space: pre-wrap;
+  outline: none;
+}
+
+.cert-block--text .cert-block-content[contenteditable="true"] {
+  cursor: text;
+  box-shadow: 0 0 0 2px #4a7dff inset;
+}
+
+.cert-block--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.witness-grid {
+  display: grid;
+  gap: 4px 10px;
+}
+
+.token-chip {
+  display: inline-block;
+  background: #e4ecff;
+  color: #1f3b8f;
+  border: 1px solid #b9caf6;
+  border-radius: 4px;
+  padding: 0 5px;
+  font-size: 0.9em;
+  font-style: normal !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  white-space: nowrap;
+}
+
+.drag-handle,
+.resize-handle,
+.block-delete {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-block.selected {
+  outline: 1.5px dashed #4a7dff;
+  outline-offset: 3px;
+}
+
+.cert-block.selected .drag-handle,
+.cert-block.selected .resize-handle,
+.cert-block.selected .block-delete {
+  display: flex;
+}
+
+.drag-handle {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 16px;
+  background: #4a7dff;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: grab;
+}
+
+.resize-handle {
+  bottom: -6px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background: #4a7dff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: nwse-resize;
+}
+
+.block-delete {
+  top: -20px;
+  right: -18px;
+  width: 18px;
+  height: 18px;
+  background: #e14b4b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Saved templates                                                     */
+/* ------------------------------------------------------------------ */
+
+.saved-templates-panel {
+  margin-top: 24px;
+}
+
+.template-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.template-item {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.template-item:hover {
+  border-color: var(--navy);
+}
+
+.empty-state {
+  color: #778;
+  font-size: 0.85rem;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Responsive                                                         */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 1100px) {
+  .editor-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-sidebar-left,
+  .editor-sidebar-right {
+    max-height: none;
+  }
+}

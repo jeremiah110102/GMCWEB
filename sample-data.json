@@ -1,0 +1,46 @@
+{
+  "churches": {
+    "sampleChurch": {
+      "name": "Grace Mission Church Socorro Or. Mindoro Inc.",
+      "address": "Catiningan, Socorro, Oriental Mindoro",
+      "contactNumber": "+63 912 345 6789",
+      "email": "office@example.org",
+      "registrationNumber": "CN200908328",
+      "createdAt": "Use a Firestore timestamp",
+      "updatedAt": "Use a Firestore timestamp"
+    }
+  },
+  "pastors": {
+    "samplePastor": {
+      "firstName": "Efraim",
+      "middleName": "B.",
+      "lastName": "Ricohermoso",
+      "suffix": "",
+      "position": "Officiating Minister",
+      "contactNumber": "+63 912 000 0000",
+      "churchId": "CHURCH_DOCUMENT_ID",
+      "churchName": "Grace Mission Church Socorro Or. Mindoro Inc.",
+      "createdAt": "Use a Firestore timestamp",
+      "updatedAt": "Use a Firestore timestamp"
+    }
+  },
+  "certificateTemplates": {
+    "sampleTemplate": {
+      "templateName": "Classic Dedication Certificate",
+      "certificateTitle": "DEDICATION CERTIFICATE",
+      "certificateMessage": "This certifies that {{name}} was dedicated to the Lord.",
+      "churchId": "CHURCH_DOCUMENT_ID",
+      "churchName": "Grace Mission Church Socorro Or. Mindoro Inc.",
+      "pastorId": "PASTOR_DOCUMENT_ID",
+      "pastorName": "Efraim B. Ricohermoso",
+      "fontFamily": "Georgia",
+      "fontSize": 18,
+      "fontColor": "#17223b",
+      "alignment": "center",
+      "paperSize": "a4",
+      "orientation": "portrait",
+      "createdAt": "Use a Firestore timestamp",
+      "updatedAt": "Use a Firestore timestamp"
+    }
+  }
+}

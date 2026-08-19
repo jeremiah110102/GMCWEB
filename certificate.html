@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Certificate | Church Dedication System</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/docx@8.5.0/build/index.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  </head>
+  <body data-page="certificate" class="certificate-page">
+    <div id="appShell">
+      <main class="content">
+        <div class="page-heading no-export">
+          <div>
+            <p class="eyebrow">Certificate Preview</p>
+            <h1>Dedication Certificate</h1>
+          </div>
+          <div class="button-row">
+            <a class="btn ghost" href="dedication-records.html">Back</a
+            ><button class="btn secondary" id="printCertificate">Print</button
+            ><button class="btn primary" id="downloadPdf">Download PDF</button
+            ><button class="btn primary" id="downloadWord">
+              Download Word
+            </button>
+          </div>
+        </div>
+        <div id="certificateLoading" class="panel">Loading certificate…</div>
+        <article
+          id="certificatePaper"
+          class="certificate-paper"
+          hidden
+        ></article>
+      </main>
+    </div>
+    <script type="module" src="js/certificate.js"></script>
+  </body>
+</html>
